@@ -1,0 +1,15 @@
+site_name: Notes: chanux.me
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'blue grey'
+    accent: 'red'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+
+nav:
+  - Home: 'index.md'
+  - Meta: 'meta.md'
