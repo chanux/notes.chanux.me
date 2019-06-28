@@ -1,1 +1,6 @@
 site/*
+terraform/.terraform
+terraform/terraform.tfstate*
+!terraform/example.tfvars
+terraform/*.tfvars
+terraform/*.out
