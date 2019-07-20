@@ -1,6 +1,6 @@
 # Setup DNS
 module "dns" {
-  source                   = "modules/cloudflare"
+  source                   = "./modules/cloudflare"
   subdomain                = "${var.subdomain}"
   sld                      = "${var.sld}"
   tld                      = "${var.tld}"
