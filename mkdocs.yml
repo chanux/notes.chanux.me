@@ -14,6 +14,7 @@ nav:
   - Home: 'index.md'
   - Terraform:
     - The Basics: 'terraform/the-basics.md'
+    - Tips: 'terraform/tips.md'
   - GCP:
     - Tips: 'gcp/tips.md'
   - Meta: 'meta.md'
