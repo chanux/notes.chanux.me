@@ -17,5 +17,6 @@ nav:
     - Automation Lessons: 'terraform/automation-lessons.md'
     - Tips: 'terraform/tips.md'
   - GCP:
+    - SWAP: 'gcp/swap.md'
     - Tips: 'gcp/tips.md'
   - Meta: 'meta.md'

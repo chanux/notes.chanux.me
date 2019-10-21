@@ -67,6 +67,8 @@ gcloud projects add-iam-policy-binding [PROJECT_ID] \
     --member serviceAccount:[SERVICE_ACCOUNT_EMAIL] --role roles/compute.imageUser
 ```
 
+If you learn better from videos, try [this](https://www.youtube.com/watch?v=lV39-BaOtg4)
+
 ## Get Internal DNS address of a GCE instance
 
 ```
