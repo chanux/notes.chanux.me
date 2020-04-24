@@ -6,11 +6,11 @@ Let's start with something overly obvious: To run Terraform, you need it to be
 installed on your system.
 
 ``` bash tab="curl"
-curl https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip | funzip > /usr/local/bin
+curl https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip | funzip > /usr/local/bin
 ```
 
 ``` bash tab="wget"
-wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip -O - | funzip > /usr/local/bin
+wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O - | funzip > /usr/local/bin
 ```
 
 ``` bash tab="brew"
@@ -29,7 +29,7 @@ create a JSON credentials file for it.
 `cat provider.tf`
 ```
 provider "google" {
- credentials = "${file("/path/to/credentials-file.json")}"
+ credentials = file("/path/to/credentials-file.json")
  project     = "your-project-id"
  region      = "us-central-1"
 }
@@ -150,8 +150,8 @@ variable "gcp_region_zone" {
 Now to use these variables, update your `main.tf` as follows.
 
 ```
- machine_type = "${var.gcp_machine_type}"
- zone         = "${var.gcp_region_zone}"
+ machine_type = var.gcp_machine_type
+ zone         = var.gcp_region_zone
 ```
 
 Now we run `terraform plan` and `terraform apply` and be done with it. Not so
