@@ -15,6 +15,7 @@ nav:
   - Terraform:
     - The Basics: 'terraform/the-basics.md'
     - Automation Lessons: 'terraform/automation-lessons.md'
+    - Workflow: 'terraform/workflow.md'
     - Tips: 'terraform/tips.md'
   - GCP:
     - SWAP: 'gcp/swap.md'
