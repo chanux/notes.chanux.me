@@ -29,7 +29,7 @@ create a JSON credentials file for it.
 `cat provider.tf`
 ```
 provider "google" {
- credentials = file("/path/to/credentials-file.json")
+ credentials = file("/path/to/service-account-key.json")
  project     = "your-project-id"
  region      = "us-central-1"
 }
@@ -40,7 +40,7 @@ with project id and region name. You could set that in your CLI environment
 instead of setting credentials field in provider section as well.
 
 ```
-export GOOGLE_APPLICATION_CREDENTIALS="/path/to/credentials-file.json"
+export GOOGLE_APPLICATION_CREDENTIALS="/path/to/service-account-key.json"
 ```
 
 Initialize terraform
@@ -158,7 +158,8 @@ Now we run `terraform plan` and `terraform apply` and be done with it. Not so
 fast! Terraform doesn't know what to use for `gcp_project_id` and `gcp_region`.
 Try running `terraform plan`. It'll ask us what to use for the varibales.
 
-This is not gonna be fun when we have more variabales and/or when we run it dozens of times. There are two things to do.
+This is not gonna be fun when we have more variabales and/or when we run it
+dozens of times. There are two things to do.
 
 1. Set a default to varibale.
 2. Provide a `.tfvars` file with the vaules.
@@ -183,7 +184,8 @@ gcp_machine_type = "f1-micro"
 gcp_region_zone = "asia-southeast1-a"
 ```
 
-To incoporate our shiny new `settings.tfvars` file in Terraform, run *plan* as follows.
+To incoporate our shiny new `settings.tfvars` file in Terraform, run *plan* as
+follows.
 
 ```
 terraform plan -out=my-plan.out -var-file=settings.tfvars
@@ -209,3 +211,14 @@ Using readymade modules is not the only appeal in Terraform modules. We can
 make our own modules to make our lives easier. This [Hashiconf '17
 talk](https://www.youtube.com/watch?v=LVgP63BkhKQ) by Gruntwork co-founder is
 a great starting point.
+
+## Fin
+
+If you read this far, you deserve a little bit more. PLease find the code we
+did here, but with little twists, on
+[github](https://github.com/chanux/terrafrom-the-basics)
+
+Also, if you are up dor a true adventure, do not miss the
+[exercise](/terrafrom/exercise)!
+
+That's all folks!
