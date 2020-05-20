@@ -214,11 +214,11 @@ a great starting point.
 
 ## Fin
 
-If you read this far, you deserve a little bit more. PLease find the code we
+If you read this far, you deserve a little bit more. Please find the code we
 did here, but with little twists, on
-[github](https://github.com/chanux/terrafrom-the-basics)
+[github](https://github.com/chanux/terraform-the-basics)
 
-Also, if you are up dor a true adventure, do not miss the
-[exercise](/terrafrom/exercise)!
+Also, if you are up for a true adventure, do not miss the
+[exercise](/terraform/exercise)!
 
 That's all folks!
