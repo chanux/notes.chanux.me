@@ -22,4 +22,5 @@ nav:
     - Org: 'gcp/org.md'
     - SWAP: 'gcp/swap.md'
     - Tips: 'gcp/tips.md'
+  - age: 'age.md'
   - Meta: 'meta.md'
