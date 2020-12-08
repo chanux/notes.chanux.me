@@ -19,6 +19,7 @@ nav:
     - Exercise: 'terraform/exercise.md'
     - Tips: 'terraform/tips.md'
   - GCP:
+    - Org: 'gcp/org.md'
     - SWAP: 'gcp/swap.md'
     - Tips: 'gcp/tips.md'
   - Meta: 'meta.md'
