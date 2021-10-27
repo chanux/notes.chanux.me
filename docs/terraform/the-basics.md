@@ -5,17 +5,30 @@
 Let's start with something overly obvious: To run Terraform, you need it to be
 installed on your system.
 
-``` bash tab="curl"
-curl https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip | funzip > /usr/local/bin
+(Check for the latest version [here](https://releases.hashicorp.com/terraform/))
+
+Set the Terraform version
+```
+export TF_VER=1.0.9
 ```
 
-``` bash tab="wget"
-wget https://releases.hashicorp.com/terraform/0.12.24/terraform_0.12.24_linux_amd64.zip -O - | funzip > /usr/local/bin
-```
+Download
 
-``` bash tab="brew"
-brew install terraform
-```
+=== "curl"
+
+    ```
+    curl https://releases.hashicorp.com/terraform/${TF_VER?}/terraform_${TF_VER?}_linux_amd64.zip | funzip > /usr/local/bin
+    ```
+=== "wget"
+
+    ```
+    wget https://releases.hashicorp.com/terraform/${TF_VER?}/terraform_${TF_VER?}_linux_amd64.zip -O - | funzip > /usr/local/bin
+    ```
+=== "brew"
+
+    ```
+    brew install terraform
+    ```
 
 ## Prepare
 
@@ -88,7 +101,7 @@ resource "google_compute_instance" "default" {
 }
 ```
 
-Run 
+Run
 
 ```
 terraform plan
@@ -109,7 +122,7 @@ We use `terraform apply` to apply a **plan** and have the resources
 created/deleted/changed.
 
 ```
-terraform plan -out=my-plan.out
+terraform plan -out my-plan.out
 ```
 
 ```
@@ -139,7 +152,7 @@ Well.. instead of that, we can use this ground breaking concept called..
 
 ```
 variable "gcp_machine_type" {
-  description = "Your GCP project ID"
+  description = "GCP compute instance type.
 }
 
 variable "gcp_region_zone" {
@@ -179,9 +192,8 @@ Now let's look at `.tfvars`
 
 `cat settings.tfvars`
 ```
-gcp_machine_type = "f1-micro"
-
-gcp_region_zone = "asia-southeast1-a"
+gcp_machine_type = "e2-micro"
+gcp_region_zone  = "asia-southeast1-a"
 ```
 
 To incoporate our shiny new `settings.tfvars` file in Terraform, run *plan* as
@@ -194,7 +206,7 @@ terraform plan -out=my-plan.out -var-file=settings.tfvars
 !!! Tip
     If you name your `.tfvars` file `settings.auto.tfvars`, terraform will
     automatically pick it up. (It doesn't have to be named **settings**. It
-    could be `what-i-fancy.auto.tfvars` and nobody cares.) 
+    could be `what-i-fancy.auto.tfvars` and nobody cares.)
 
 We are almost all ready to Terraform everything. Before we wrap up, there's
 something very importnant to cover. That is Terraform Modules.
