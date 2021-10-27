@@ -1,5 +1,5 @@
 steps:
-    - name: 'asia.gcr.io/$PROJECT_ID/mkdocs-material'
-      args: ['build']
-    - name: 'gcr.io/cloud-builders/gsutil'
-      args: ['rsync', '-r', 'site', 'gs://$_GCS_BUCKET_NAME/']
+- name: 'asia.gcr.io/$PROJECT_ID/mkdocs-material:7.3.4'
+  args: ['build']
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['rsync', '-r', 'site', 'gs://$_GCS_BUCKET_NAME/']
