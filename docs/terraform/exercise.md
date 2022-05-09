@@ -42,5 +42,7 @@ following resource layout.
     set up an organization you need either
     [Gsuite](https://gsuite.google.com.sg/intl/en_sg/) or [Cloud
     Identity](https://cloud.google.com/identity/). Premium tier costs $6/month.
-    Cloud identity has a free tier. Use that to set up an organization. You
-    would also need your own domain name. 
+    Cloud identity has a [free
+    tier]()https://cloud.google.com/identity/docs/set-up-cloud-identity-admin#sign-up-for-cloud-identity-free.
+    Use that to set up an organization. You would also need your own **domain
+    name**.
