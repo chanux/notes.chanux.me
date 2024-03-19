@@ -15,6 +15,7 @@ nav:
   - Home: 'index.md'
   - Terraform:
     - The Basics: 'terraform/the-basics.md'
+    - Flexible: 'terraform/flexible.md'
     - Automation Lessons: 'terraform/automation-lessons.md'
     - Workflow: 'terraform/workflow.md'
     - Exercise: 'terraform/exercise.md'

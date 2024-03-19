@@ -9,7 +9,7 @@ installed on your system.
 
 Set the Terraform version
 ```
-export TF_VER=1.0.9
+export TF_VER=1.6.9
 ```
 
 Download
