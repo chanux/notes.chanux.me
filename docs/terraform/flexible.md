@@ -62,19 +62,19 @@ keys provides and interesting benefit!
 subnets = {
   first = {
     name                = "first-snet"
-    address_prefix      = "10.0.1.0/24"
+    address_prefixes    = ["10.0.1.0/24"]
     virtual_network_key = "primary"
   }
 
   zweite = {
     name                = "zweite-snet"
-    address_prefix      = "10.0.2.0/24"
+    address_prefixes    = ["10.0.2.0/24"]
     virtual_network_key = "primary"
   }
 
   fun_subnet = {
     name                = "fun-snet"
-    address_prefix      = "10.1.1.0/24"
+    address_prefixes    = ["10.1.1.0/24"]
     virtual_network_key = "just_for_fun"
   }
 }
@@ -84,6 +84,26 @@ Did you see how I used the keys from virtual_networks map to reference
 a virtual_network from a subnet configuration object? You can use this idea and
 link configuration objects! if you noticed, the virtual network and subnet
 configurations are similar to the relevant terrafrom resource!
+
+```
+resource "azurerm_virtual_network" "main" {
+  for_each = var.virtual_networks
+
+  name                = each.value.name
+  address_space       = each.value.address_space
+  location            = each.value.location
+  resource_group_name = each.value.resource_group_name
+}
+
+resource "azurerm_subnet" "main" {
+  for_each = var.subnets
+
+  name                 = each.value.name
+  resource_group_name  = azurerm_virtual_network.main[each.value.virtual_network_key].resource_group_name
+  virtual_network_name = azurerm_virtual_network.main[each.value.virtual_network_key]
+  address_prefixes     = each.value.address_prefixes
+}
+```
 
 In scaling up and/or down, you can create 0, 1 or n number of resources with
 just updating configuration!
@@ -102,13 +122,11 @@ significance in your resources!
 ## A bit of magic
 
 While this way of doing things make configuration readable and close to
-terraform resouce definitions, we will be pushing some complexity into the
+Terraform resource definitions, we will be pushing some complexity into the
 module code. 
 
-TODO: Add example resource referennce code
-
-For example, to be able to link objects based on map keys, you need to be
-comfortable with [`for`
+For example, to resolve object relationships based on available info (ex: map
+keys), you need to be comfortable with [`for`
 expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
 
 When you are building complete modules using these ideas, things become highly
