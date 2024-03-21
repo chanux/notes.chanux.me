@@ -114,7 +114,7 @@ Keep in mind that you CAN NOT use sets of objects with `for_each`
 
 One important rule of thumb to follow is to not give "significance" to map keys. Let
 me explain! Do not use map keys in any parameter in your resource where
-a change in key would lead to destroy/create of your resource! 
+a change in key would lead to destroy/create of your resource!
 
 So, please make your map key names meaningful but DO NOT let them have any
 significance in your resources!
@@ -123,7 +123,7 @@ significance in your resources!
 
 While this way of doing things make configuration readable and close to
 Terraform resource definitions, we will be pushing some complexity into the
-module code. 
+module code.
 
 For example, to resolve object relationships based on available info (ex: map
 keys), you need to be comfortable with [`for`
@@ -135,3 +135,30 @@ dynamic and there may be cases where you have to use nested loops.
 Hope [this
 guide](https://gist.github.com/chanux/e9ebabb46169b9d2c46c331f56da4800) will
 help demistify nested loops!
+
+## To try or not to try
+
+In aztfmod, they do not use strict type definitions. Instead, they heavily use
+`try` or `coalesce` to gracefully resolve input parameters. However,
+I personally prefer types, even though I do see some cons to it.
+
+- If you have two layers of modules (a module with a submodule), and have to
+  pass down values as is,  you may have to repeat your type definitions and it
+  can get tedious.
+- The validation system is not good enough for nicely handling some complex
+  validations/checks.
+- Multiple optional parameters can really get you with
+  [typos](https://gist.github.com/chanux/8afa8c25bc198187eee892ab54063f3c).
+
+However, I really like getting the type system to work for me (set defaults,
+ensure type adherence) and the fact that it clearly tells the user what's
+expected.
+
+As an aside on `try`, I once got bamboozled because I used `null` to
+incorrectly emulate error case. Check [this
+gist](https://gist.github.com/chanux/6de8bcdfeea327240776b7e4af72eb69) to see
+my naivete and not repeat my mistakes!
+
+To conclude, I have not had to write modules of aztfmod scale or complexity.
+Hence I have survived with type definitions so far! So pick what's right for
+you with experimentation!
