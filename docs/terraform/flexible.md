@@ -56,7 +56,7 @@ virtual_networks = {
 So yeah, choose not just maps. Choose maps of objects!
 
 This makes your config more readable, helps separating code and config and map
-keys provides and interesting benefit!
+keys provides an interesting benefit!
 
 ```
 subnets = {
@@ -80,10 +80,9 @@ subnets = {
 }
 ```
 
-Did you see how I used the keys from virtual_networks map to reference
-a virtual_network from a subnet configuration object? You can use this idea and
-link configuration objects! if you noticed, the virtual network and subnet
-configurations are similar to the relevant terrafrom resource!
+Did you see how I used the keys from `virtual_networks` map to reference
+a virtual network from a subnet configuration object? You can use this idea and
+link configuration objects!
 
 ```
 resource "azurerm_virtual_network" "main" {
@@ -108,22 +107,26 @@ resource "azurerm_subnet" "main" {
 In scaling up and/or down, you can create 0, 1 or n number of resources with
 just updating configuration!
 
-One downside to using maps is that it can feel quite verbose. In some cases,
-the map keys might feel supefluous and you may be drawn to *sets of objects*.
-Keep in mind that you CAN NOT use sets of objects with `for_each`
+Also, did you notice that the virtual network and subnet configurations are
+similar to the relevant Terrafrom resource configuration? That's ready-made
+documentation for you!
 
-One important rule of thumb to follow is to not give "significance" to map keys. Let
-me explain! Do not use map keys in any parameter in your resource where
-a change in key would lead to destroy/create of your resource!
+Enough with the 5 star comments. Let's get to the 2 star ones. One downside to
+using maps is that it can feel quite verbose. In some cases, the map keys might
+feel supefluous and you may be drawn to *sets of objects*. Keep in mind that
+you CAN NOT use sets of objects with `for_each`
 
-So, please make your map key names meaningful but DO NOT let them have any
+One important rule of thumb to follow is to not give "significance" to map
+keys. Let me explain! Do not use map keys in any parameter in your resource
+where a change in key would lead to destroy/create of your resource!  So,
+please make your map key names meaningful but DO NOT let them have any
 significance in your resources!
 
 ## A bit of magic
 
 While this way of doing things make configuration readable and close to
-Terraform resource definitions, we will be pushing some complexity into the
-module code.
+Terraform resource definitions, we may be pushing some complexity into the
+module code, in some cases.
 
 For example, to resolve object relationships based on available info (ex: map
 keys), you need to be comfortable with [`for`
