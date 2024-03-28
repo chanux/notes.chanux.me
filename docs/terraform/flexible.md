@@ -4,8 +4,8 @@
 
 When the days were old an simple, we created simple modules with a few
 variables and created a buch of resources. If we wanted multiple instances of
-a resource we used `count`s. If we wanted to create multiple instances of
-a resource with some custom info we used `list`s.
+a resource, we used `count`s. If we wanted to create multiple instances of
+a resource with some custom info, we used `list`s.
 
 Then we learned about [the troubles of
 lists](https://faun.pub/terraform-deleting-an-element-from-a-list-cb5bdadc8bbd),
@@ -55,8 +55,8 @@ virtual_networks = {
 
 So yeah, choose not just maps. Choose maps of objects!
 
-This makes your config more readable, helps separating code and config and map
-keys provides an interesting benefit!
+This makes your config more readable and it helps separating code and config.
+On top of that, map keys provide an interesting benefit!
 
 ```
 subnets = {
@@ -129,15 +129,14 @@ Terraform resource definitions, we may be pushing some complexity into the
 module code, in some cases.
 
 For example, to resolve object relationships based on available info (ex: map
-keys), you need to be comfortable with [`for`
+keys), in some cases you need to be comfortable with [`for`
 expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
 
 When you are building complete modules using these ideas, things become highly
-dynamic and there may be cases where you have to use nested loops.
-
-Hope [this
+dynamic and you are destined to come across cases where you have to use nested
+loops. I hope [this
 guide](https://gist.github.com/chanux/e9ebabb46169b9d2c46c331f56da4800) will
-help demistify nested loops!
+help demistifying nested loops!
 
 ## To try or not to try
 
@@ -165,3 +164,8 @@ my naivete and not repeat my mistakes!
 To conclude, I have not had to write modules of aztfmod scale or complexity.
 Hence I have survived with type definitions so far! So pick what's right for
 you with experimentation!
+
+PS: Thanks [Laurent Lesle](https://github.com/LaurentLesle) for the biggest
+opportunity to learn and grow in 2023! The general sense of confidence you gave
+in getting into an unfamiliar way of doing things and your mentorship was
+a pillar for the success in the effort that taught me all this.
