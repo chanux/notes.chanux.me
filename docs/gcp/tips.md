@@ -38,7 +38,11 @@ And in your `~/.gitconfig` file, add following
     helper = gcloud.sh
 ```
 
-## Mchine Types
+For those who installed `google-cloud-sdk` with Homebrew, this should be
+`gcloud`. See [this SO answer](https://stackoverflow.com/a/39963874/118872) for
+more
+
+## Machine Types
 
 ```
 f1-micro
