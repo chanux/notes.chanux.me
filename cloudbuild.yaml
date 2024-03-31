@@ -1,5 +1,5 @@
 steps:
-- name: 'asia.gcr.io/$PROJECT_ID/mkdocs-material:7.3.4'
+- name: '$_DOCKER_REGISTRY/squidfunk/mkdocs-material:9.5.16'
   args: ['build']
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['rsync', '-r', 'site', 'gs://$_GCS_BUCKET_NAME/']
