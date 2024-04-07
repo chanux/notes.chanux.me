@@ -2,12 +2,12 @@
 
 ## Overview
 
-When the days were old an simple, we created simple modules with a few
-variables and created a buch of resources. If we wanted multiple instances of
-a resource, we used `count`s. If we wanted to create multiple instances of
-a resource with some custom info, we used `list`s.
+When the days were old and simple, we created simple modules with a few
+variables and created a bunch of resources. If we wanted multiple instances of
+a resource, we used `count`s. Multiple instances of
+a resource with some custom infomtion? `list`s were the go to.
 
-Then we learned about [the troubles of
+Then we learned about [the perils of
 lists](https://faun.pub/terraform-deleting-an-element-from-a-list-cb5bdadc8bbd),
 the hard way.
 
@@ -25,7 +25,8 @@ Terraform module maintained by a team at Microsoft, providing an opinionated,
 yet flexible implementation of their Cloud Adoption Framework for Azure.
 
 Looking at aztfmod, I have learned a great deal about managing the inevitable
-complexity and keep things flexible still.
+complexity and keep things flexible still. This write up is to note down the
+main ideas of this endeavour.
 
 ## Choose Maps
 
@@ -104,17 +105,20 @@ resource "azurerm_subnet" "main" {
 }
 ```
 
-In scaling up and/or down, you can create 0, 1 or n number of resources with
+In scaling up and/or down, you can create 0, 1 or n number of resources by
 just updating configuration!
 
 Also, did you notice that the virtual network and subnet configurations are
-similar to the relevant Terrafrom resource configuration? That's ready-made
-documentation for you!
+similar to the relevant Terraform resource configuration? That's not by
+mistake. This way, your module interface does not become another new thing
+figure out.  And regarding the documentation, folks behind Terraform already
+wrote most of it!
 
-Enough with the 5 star comments. Let's get to the 2 star ones. One downside to
-using maps is that it can feel quite verbose. In some cases, the map keys might
-feel supefluous and you may be drawn to *sets of objects*. Keep in mind that
-you CAN NOT use sets of objects with `for_each`
+Enough with the 5 star comments. Let's get to the 2 star ones.
+
+One downside to using maps is that it can feel quite verbose. In some cases,
+the map keys might feel supefluous and you may be drawn to *sets of objects*.
+Keep in mind that you CAN NOT use sets of objects with `for_each`
 
 One important rule of thumb to follow is to not give "significance" to map
 keys. Let me explain! Do not use map keys in any parameter in your resource
@@ -129,7 +133,7 @@ Terraform resource definitions, we may be pushing some complexity into the
 module code, in some cases.
 
 For example, to resolve object relationships based on available info (ex: map
-keys), in some cases you need to be comfortable with [`for`
+keys), sometimes you need to be comfortable with [`for`
 expressions](https://developer.hashicorp.com/terraform/language/expressions/for)
 
 When you are building complete modules using these ideas, things become highly
@@ -157,9 +161,9 @@ ensure type adherence) and the fact that it clearly tells the user what's
 expected.
 
 As an aside on `try`, I once got bamboozled because I used `null` to
-incorrectly emulate error case. Check [this
-gist](https://gist.github.com/chanux/6de8bcdfeea327240776b7e4af72eb69) to see
-my naivete and not repeat my mistakes!
+incorrectly emulate the error case. Check [this
+gist](https://gist.github.com/chanux/6de8bcdfeea327240776b7e4af72eb69) to
+witness my naivete and not repeat my mistakes!
 
 To conclude, I have not had to write modules of aztfmod scale or complexity.
 Hence I have survived with type definitions so far! So pick what's right for
