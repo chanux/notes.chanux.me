@@ -45,3 +45,19 @@ is [here](https://gist.github.com/chanux/9411092)
 Another idea I have explored is going up to directory by name. bash/zsh/fish
 implementations are found
 [here](https://gist.github.com/chanux/08c6f53472190a02b33bd49100163d93)
+
+## Mailhog
+
+Testing emails from a web app you are building? Start
+[here](https://github.com/mailhog/MailHog)
+
+I really liked Mailhog when I did this type of work but it's been a while since
+I had test sending e-mail. Mailhog is not maintained anymore and
+[Mailpit](https://github.com/axllent/mailpit) seems to want to carry the baton!
+
+There's also [MailCrab](https://github.com/tweedegolf/mailcrab), written in Rust!
+
+## Vegeta
+
+Want to load test your web app? [Vegeta](https://github.com/tsenart/vegeta) is
+easy to get started with.

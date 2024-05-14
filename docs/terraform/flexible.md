@@ -41,7 +41,10 @@ virtual_networks = {
     location            = "southeastasia"
     resource_group_name = "my-rg"
     address_space       = ["10.0.0.0/16"]
-    dns_servers         = ["10.0.0.4", "10.0.0.5"]
+    dns_servers = [
+      "10.0.0.4",
+      "10.0.0.5",
+    ]
   }
 
   just_for_fun = {
@@ -49,7 +52,10 @@ virtual_networks = {
     location            = "southeastasia"
     resource_group_name = "my-rg"
     address_space       = ["10.1.0.0/16"]
-    dns_servers         = ["10.0.0.4", "10.0.0.5"]
+    dns_servers = [
+      "10.0.0.4",
+      "10.0.0.5",
+    ]
   }
 }
 ```
