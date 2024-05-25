@@ -175,7 +175,26 @@ To conclude, I have not had to write modules of aztfmod scale or complexity.
 Hence I have survived with type definitions so far! So pick what's right for
 you with experimentation!
 
+## Use Terraform remote state data sources
+
+Remote state data sources are a considerable improvemnt over the regular data
+sources.
+
+- Instead of failing on non-existent resources, it can provide an empty
+  iterable to be handled gracefully.
+- It can help save on the number of API calls.
+- It can free you from depending on very spcific naming/naming-conventions for
+  data sources.
+
+I was already leaning towards not using data sources in modules (use them in
+root modules, if you use them) to avoid implicit dependencies in modules.
+Being able to do away with it altogether was a great quality of life
+improvemnt.
+
+That's all for now! If you read this, you are likely to know how to reach out
+to me.  I would love to hear your thoughts on this!
+
 PS: Thanks [Laurent Lesle](https://github.com/LaurentLesle) for the biggest
 opportunity to learn and grow in 2023! The general sense of confidence you gave
 in getting into an unfamiliar way of doing things and your mentorship was
-a pillar for the success in the effort that taught me all this.
+a pillar of the success in the effort that taught me all this.
