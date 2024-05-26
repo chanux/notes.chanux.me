@@ -3,18 +3,18 @@
 ## Overview
 
 When the days were old and simple, we created simple modules with a few
-variables and created a bunch of resources. If we wanted multiple instances of
-a resource, we used `count`s. Multiple instances of
-a resource with some custom infomtion? `list`s were the go to.
+variables and had them create a bunch of resources. If we wanted multiple
+instances of a resource, we'd use `count`s. Multiple instances of a resource
+with some custom information? No problem. A couple of `list`s could do the job!
 
 Then we learned about [the perils of
 lists](https://faun.pub/terraform-deleting-an-element-from-a-list-cb5bdadc8bbd),
 the hard way.
 
 Our simple modules with a dozen variables grew into requiring a few dozens of
-varaibles. We soon lost flexibility in complexity.
+variables. We soon lost flexibility in complexity.
 
-However, not all hopes are lost. Terraform introduced more features to deal
+However, not all hopes are lost. Terraform has introduced more features to deal
 with the naturally increasing complexity. These, combined with a bit of
 discipline and a set of good rules of thumb we may be able to claw back some
 flexibility while arguably reducing complexity.
@@ -25,7 +25,7 @@ Terraform module maintained by a team at Microsoft, providing an opinionated,
 yet flexible implementation of their Cloud Adoption Framework for Azure.
 
 Looking at aztfmod, I have learned a great deal about managing the inevitable
-complexity and keep things flexible still. This write up is to note down the
+complexity and keeping things flexible still. This write-up is to note down the
 main ideas of this endeavour.
 
 ## Choose Maps
@@ -177,7 +177,7 @@ you with experimentation!
 
 ## Use Terraform remote state data sources
 
-Remote state data sources are a considerable improvemnt over the regular data
+Remote state data sources are a considerable improvement over the regular data
 sources.
 
 - Instead of failing on non-existent resources, it can provide an empty
@@ -189,7 +189,7 @@ sources.
 I was already leaning towards not using data sources in modules (use them in
 root modules, if you use them) to avoid implicit dependencies in modules.
 Being able to do away with it altogether was a great quality of life
-improvemnt.
+improvement.
 
 That's all for now! If you read this, you are likely to know how to reach out
 to me.  I would love to hear your thoughts on this!
