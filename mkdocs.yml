@@ -16,6 +16,7 @@ nav:
   - Terraform:
       - The Basics: 'terraform/the-basics.md'
       - Flexible Terraform: 'terraform/flexible.md'
+      - Provider Missmanagement: 'terraform/providers.md'
       - Automation Lessons: 'terraform/automation-lessons.md'
       - Workflow: 'terraform/workflow.md'
       - Exercise: 'terraform/exercise.md'
