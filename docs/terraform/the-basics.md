@@ -231,6 +231,6 @@ did here, but with little twists, on
 [github](https://github.com/chanux/terraform-the-basics)
 
 Also, if you are up for a true adventure, do not miss the
-[exercise](/terraform/exercise)!
+[exercise](exercise.md)!
 
 That's all folks!
