@@ -5,7 +5,7 @@
 Terraform changed how provider requirements of a module are handle in Terraform
 [version 0.11](https://developer.hashicorp.com/terraform/language/modules/develop/providers#legacy-shared-modules-with-provider-configurations).
 
-In version `<= 0.10`, providers within modules were handled implicitly. In
+In versions `<= 0.10`, the providers within modules were handled implicitly. In
 other words, there was no explicit way to use a different cofiguration of the
 same provider, in different modules. The workaround, though not ideal in
 practice, was to define providers indside the module itself. (Yours truly still
@@ -13,11 +13,12 @@ has flashbacks of being confused as to how this works!)
 
 Fast forward to `0.13`, provider definitions are still allowed in modules, for
 backwards compatibility. However, it will take away your ability to use
-`for_each`, `count` and `depends_on`.
+`for_each`, `count` and `depends_on` with modules.
+
 
 ## Copy Pasta
 
-Fast further forward to the age of.. *checks notes* Terraform version `1.9.x`,
+Fast forward further to the age of.. *checks notes* Terraform version `1.9.x`,
 and I still see these ancient practices copy pasted through generations of
 code.  Copying over working code and chaging until a semblance of 'working'
 appears is a much more wide spread practice than acknowledged.
@@ -25,9 +26,9 @@ appears is a much more wide spread practice than acknowledged.
 
 ## Warnings
 
-Terraform however adds warnings about provider mishandling. For better or
+Terraform however adds warnings about provider "mishandling". For better or
 worse, no one really cares about warnings! "But wait..", you exclaim. "How
-could it be *better*?"." Consider the following scenario.
+could it be *better*?". Consider the following scenario.
 
 Like any fine day, I create a module (copy paste code of course) and think how
 I'm gonna use it. I was just kidding, taking time to think is for losers, I just
@@ -106,13 +107,13 @@ Now you `terraform init`, just to be greeted with the following warning.
 As someone who copy pastes things but still tries to get rid of the
 warnings, I might just go and do what Terraform tells me to do and add
 `required_providers` config that's totally irrelevant to what I might have been
-doing.  However it's easier to just ignore the warning and let the unfortunate
-who get to work on this code base in the future confused/annoyed.
+doing.  However, it's easier to just ignore the warning and let the unfortunate
+who get to work on this code base in the future be confused/annoyed.
 
 This scenario is not that difficult to digest because it's just a few lines of
 code and the provider naming is still sane. Now imagine a case where the code
-base is quite big and provider naming is out of whack! Things get pretty hard
-to reason about.
+base is quite big and provider naming is out of whack! Things can get pretty
+hard to reason about pretty quickly.
 
 ## Take home
 
@@ -130,8 +131,8 @@ to reason about.
     - [Provider Configuration](https://developer.hashicorp.com/terraform/language/providers/configuration)
     - [Providers within modules](https://developer.hashicorp.com/terraform/language/modules/develop/providers)
 
-To wrap up, if I did my bad example above correctly, it would look like the
-following.
+To wrap up, if I re-did my bad example above correctly, it would look something
+like the following.
 
 Main of the root module
 ```
