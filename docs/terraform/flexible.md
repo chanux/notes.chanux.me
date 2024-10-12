@@ -132,6 +132,11 @@ where a change in key would lead to destroy/create of your resource!  So,
 please make your map key names meaningful but DO NOT let them have any
 significance in your resources!
 
+Update: Are you aware of the pesky "known after apply" issue?. Maps (or in
+general, iterables) saved me from the jaws of a tricky on of those. [Here's
+a simplified demo](https://codeberg.org/chanux/demo-tf-known-after-apply) of
+the scenario (solution included!).
+
 ## A bit of magic
 
 While this way of doing things make configuration readable and close to
