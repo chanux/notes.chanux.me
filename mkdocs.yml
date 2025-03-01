@@ -5,6 +5,8 @@ theme:
   palette:
     primary: 'blue grey'
     accent: 'red'
+  features:
+    - content.code.copy
 
 markdown_extensions:
   - admonition
