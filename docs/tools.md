@@ -10,6 +10,29 @@ Originally [rupa/z](https://github.com/rupa/z) but I have switched to
 I have generally bad memory so to cd into a commonly used directory with just
 a part of the name I remember is really useful.
 
+## Direnv
+
+[Direnv](https://github.com/direnv/direnv) can load/unload environment
+variables depending on your current directory. Combined with other
+tools/strategies, direnv can give boring looking 'super powers' that greatly
+improves quality of life.
+
+One practical example is working with cloud environments. Especially if you
+work with multiple cloud accounts, cloud regions etc. you can strategically use
+environment variables to auto-configure the environment when you switch into
+the respective directory.
+
+I have also tested out mise-en-place, which in my opinion tries to cover a lot
+more ground for better or worse. Hence it has been a bit slow for me to adopt
+it. But it may suit your style so take a look https://github.com/jdx/mise
+
+## Zellij
+
+I use this mainly behind corporate barbed wires. I initially tried it because
+it was a tmux like thing which I can take behind the barbed wires. Something
+I really like about [zellij](https://github.com/zellij-org/zellij) is how
+discoverable it's features are.
+
 ## FZF
 
 Fzf is fuzzy finder that is really versatil. You can use it in many places and
@@ -27,13 +50,6 @@ Also zoxide picks up fzf and works with it!
 A very fast Grep with nice default behaviour including filters.
 
 See why you may want to try [ripgrep](https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#why-should-i-use-ripgrep)
-
-## Zellij
-
-I use this mainly behind corporate barbed wires. I initially tried it because
-it was a tmux like thing which I can take behid the barbed wires. Something
-I really like about [zellij](https://github.com/zellij-org/zellij) is how
-discoverable it's features are.
 
 ## za
 
