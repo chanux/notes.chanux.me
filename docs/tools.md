@@ -10,6 +10,24 @@ Originally [rupa/z](https://github.com/rupa/z) but I have switched to
 I have generally bad memory so to cd into a commonly used directory with just
 a part of the name I remember is really useful.
 
+## Mise
+
+It took me a while to understand [mise-en-place](https://github.com/jdx/mise)
+because I got in thinking it replaces direnv + adds more features (See my note
+under direnv. I'll keep it).  I relized it's value when I used it to install
+(compile) a newer Python.  I already used Pyenv but I found Mise process at
+least a tad bit easier.
+
+The `pipx` backend support is also a huge positive for me as I already used
+pipx quite a lot.
+
+## Gitui
+
+A TUI for viewing git can come handy sometimes. I used `tig` originally but had
+trouble installing it in a corporate environment. I tried
+[gitui](https://github.com/gitui-org/gitui) as a replacement and I really like
+it!
+
 ## Direnv
 
 [Direnv](https://github.com/direnv/direnv) can load/unload environment
@@ -24,7 +42,7 @@ the respective directory.
 
 I have also tested out mise-en-place, which in my opinion tries to cover a lot
 more ground for better or worse. Hence it has been a bit slow for me to adopt
-it. But it may suit your style so take a look https://github.com/jdx/mise
+it. But it may suit your style so take a look.
 
 ## Zellij
 
@@ -61,6 +79,18 @@ is [here](https://gist.github.com/chanux/9411092)
 Another idea I have explored is going up to directory by name. bash/zsh/fish
 implementations are found
 [here](https://gist.github.com/chanux/08c6f53472190a02b33bd49100163d93)
+
+## tenv
+
+I used to use `tfenv` for managing multiple Terraform versions. This is actually
+a real use case at work. It helps you testing things with different Terraform
+versions. Also, corporate environment sometimes don't let you kill things so
+easily so sometimes gotta hang on to some old versions.
+
+Since `tfenv` is not maintained anymore, I switched to
+[tenv](https://github.com/tofuutils/tenv). It allows to manage opentofu,
+terragrunt, terramate and atmos as well. I can manage multiple Terraform
+versions with `mise` as well but have not thought of switching.
 
 ## Mailhog
 
