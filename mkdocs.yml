@@ -27,6 +27,10 @@ nav:
       - Org: 'gcp/org.md'
       - SWAP: 'gcp/swap.md'
       - Tips: 'gcp/tips.md'
+  - AWS:
+      - Org: 'aws/org.md'
+  - Networking:
+      - How network access works: 'networking/how-network-acess-works.md'
   - Tools: 'tools.md'
   - age: 'age.md'
   - Meta: 'meta.md'
