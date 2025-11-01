@@ -29,9 +29,23 @@ Example:
 
 To see the specific route to a destination IP, you can use the command:
 
-```
-ip route get <ip>
-```
+=== "Linux"
+
+    ```
+    ip route get <ip>
+    ```
+
+=== "Mac"
+
+    ```
+    route get <ip>
+    ```
+
+=== "Windows"
+
+    ```
+    Get-NetRoute -DestinationPrefix "<ip>"
+    ```
 
 ---
 
