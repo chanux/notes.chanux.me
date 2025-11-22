@@ -10,9 +10,11 @@ theme:
 
 markdown_extensions:
   - admonition
+  - footnotes
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+
 nav:
   - Home: 'index.md'
   - Terraform:
