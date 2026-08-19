@@ -33,6 +33,8 @@ nav:
       - Org: 'aws/org.md'
   - Networking:
       - How network access works: 'networking/how-network-acess-works.md'
+  - Linux:
+      - A bit more security for app secrets: 'linux/systemd-creds.md'
   - Tools: 'tools.md'
   - age: 'age.md'
   - Meta: 'meta.md'
